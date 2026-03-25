@@ -202,21 +202,13 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
+  /* Hide scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    display: none;
   }
 
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary));
+  html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 }
