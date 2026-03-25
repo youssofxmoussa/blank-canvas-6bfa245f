@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,11 +14,9 @@ const Footer = () => {
   useEffect(() => {
     if (!footerRef.current) return;
     
-    // Clear previous triggers
     triggersRef.current.forEach((t) => t.kill());
     triggersRef.current = [];
 
-    // Simple fade-in animation that works on all devices
     const elements = [leftTextRef.current, rightTextRef.current].filter(Boolean);
     
     elements.forEach((el) => {
@@ -52,19 +51,22 @@ const Footer = () => {
       ref={footerRef}
       className="py-8 sm:py-10 px-4 sm:px-6 md:px-12 border-t border-border/50"
     >
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <p 
-          ref={leftTextRef}
-          className="text-xs sm:text-sm text-muted-foreground font-light"
-        >
-          © 2026 Youssof Moussa. All rights reserved.
-        </p>
-        <p 
-          ref={rightTextRef}
-          className="text-xs sm:text-sm text-muted-foreground font-light"
-        >
-          Crafted with precision ✨
-        </p>
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p 
+            ref={leftTextRef}
+            className="text-xs sm:text-sm text-muted-foreground font-light"
+          >
+            © 2026 Youssof Moussa. All rights reserved.
+          </p>
+          <div ref={rightTextRef} className="flex items-center gap-4 text-xs sm:text-sm text-muted-foreground font-light">
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <span className="text-border">|</span>
+            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
+            <span className="text-border">|</span>
+            <span>Crafted with precision ✨</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
