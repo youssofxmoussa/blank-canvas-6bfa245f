@@ -5,6 +5,10 @@ import { useSound } from '@/contexts/SoundContext';
 
 const Navigation = () => {
   const navItems = ['About', 'Work', 'Skills', 'Contact'];
+  const legalItems = [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { playClick, playHover, playWhoosh, soundEnabled, toggleSound } = useSound();
 
