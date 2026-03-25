@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Volume2, VolumeX } from 'lucide-react';
 import { useSound } from '@/contexts/SoundContext';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const navItems = ['About', 'Work', 'Skills', 'Contact'];
