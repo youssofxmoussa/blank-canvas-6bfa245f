@@ -1,14 +1,305 @@
+# =====================================================
+# ROBOTS.TXT - Youssof Moussa Portfolio
+# Optimized for Google Search Console
+# Domain: youssefxmoussa.vercel.app
+# Last Updated: 2026-02-08
+# Version: 4.0.0 - Crawl Budget Optimized
+# =====================================================
+
+# -----------------------------------------------------
+# GENERAL RULES - All Search Engines
+# Optimized for crawl budget efficiency
+# -----------------------------------------------------
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /humans.txt
+Allow: /og-image.jpg
+Allow: /.well-known/
+
+# Block development and system files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.env.*
+Disallow: /dist/
+Disallow: /build/
+Disallow: /coverage/
+Disallow: /.vscode/
+Disallow: /.idea/
+
+# Block config files
+Disallow: /vite.config.ts
+Disallow: /tailwind.config.ts
+Disallow: /tsconfig.json
+Disallow: /tsconfig.*.json
+Disallow: /postcss.config.js
+Disallow: /eslint.config.js
+Disallow: /vitest.config.ts
+Disallow: /components.json
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /bun.lockb
+
+# Increased crawl delay to reduce server load and fix quota exceeded
+Crawl-delay: 5
+
+# -----------------------------------------------------
+# GOOGLE SEARCH BOT - Primary
+# Faster crawl for main search engine
+# -----------------------------------------------------
 User-agent: Googlebot
 Allow: /
+Allow: /sitemap.xml
+Allow: /.well-known/
+Crawl-delay: 3
 
+User-agent: Googlebot-Image
+Allow: /
+Allow: /og-image.jpg
+Allow: /assets/
+
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 3
+
+# -----------------------------------------------------
+# BING SEARCH BOT
+# -----------------------------------------------------
 User-agent: Bingbot
 Allow: /
+Allow: /sitemap.xml
+Crawl-delay: 2
 
+User-agent: msnbot
+Allow: /
+Crawl-delay: 2
+
+# -----------------------------------------------------
+# SOCIAL MEDIA BOTS - Allow for previews
+# -----------------------------------------------------
 User-agent: Twitterbot
 Allow: /
+Allow: /og-image.jpg
 
 User-agent: facebookexternalhit
 Allow: /
+Allow: /og-image.jpg
 
-User-agent: *
+User-agent: facebookexternalhit/1.1
 Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /og-image.jpg
+
+User-agent: Discordbot
+Allow: /
+Allow: /og-image.jpg
+
+User-agent: TelegramBot
+Allow: /
+Allow: /og-image.jpg
+
+User-agent: WhatsApp
+Allow: /
+Allow: /og-image.jpg
+
+User-agent: Slackbot
+Allow: /
+
+# -----------------------------------------------------
+# OTHER SEARCH ENGINES
+# -----------------------------------------------------
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 3
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# -----------------------------------------------------
+# SEO & ANALYTICS TOOLS
+# Higher delay to preserve crawl budget
+# -----------------------------------------------------
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 10
+
+User-agent: DotBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: rogerbot
+Allow: /
+Crawl-delay: 10
+
+# -----------------------------------------------------
+# ARCHIVE BOTS
+# -----------------------------------------------------
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 15
+
+User-agent: archive.org_bot
+Allow: /
+Crawl-delay: 15
+
+# -----------------------------------------------------
+# BLOCK AGGRESSIVE SCRAPERS
+# These consume crawl budget unnecessarily
+# -----------------------------------------------------
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: mail.ru_bot
+Disallow: /
+
+User-agent: YisouSpider
+Disallow: /
+
+User-agent: 360Spider
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: Curl
+Disallow: /
+
+# -----------------------------------------------------
+# BLOCK AI TRAINING BOTS
+# Protect content from AI scraping
+# -----------------------------------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+# -----------------------------------------------------
+# SITEMAP LOCATION
+# -----------------------------------------------------
+Sitemap: https://youssefxmoussa.vercel.app/sitemap.xml
+
+# -----------------------------------------------------
+# HOST DIRECTIVE
+# -----------------------------------------------------
+Host: https://youssefxmoussa.vercel.app
+
+# -----------------------------------------------------
+# CLEAN PARAM (for Yandex)
+# Remove tracking parameters
+# -----------------------------------------------------
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+Clean-param: fbclid&gclid&msclkid
+
+# =====================================================
+# END OF ROBOTS.TXT
+# Optimized for crawl budget efficiency
+# =====================================================
