@@ -21,7 +21,7 @@ const Navigation = () => {
   return (
     <>
       <motion.nav 
-        className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-12 py-4 sm:py-6 bg-background/80 backdrop-blur-lg"
+        className="fixed top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 md:left-12 md:right-12 z-50 px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-2xl border border-white/10 bg-background/40 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
