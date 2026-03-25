@@ -2,9 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Volume2, VolumeX } from 'lucide-react';
 import { useSound } from '@/contexts/SoundContext';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const navItems = ['About', 'Work', 'Skills', 'Contact'];
+  const legalItems = [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { playClick, playHover, playWhoosh, soundEnabled, toggleSound } = useSound();
 
@@ -107,14 +112,14 @@ const Navigation = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   onClick={handleNavClick}
                   onMouseEnter={playHover}
-                  className="text-3xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                  className="text-2xl sm:text-3xl font-display font-bold text-foreground hover:text-primary transition-colors"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -122,17 +127,39 @@ const Navigation = () => {
                   {item}
                 </motion.a>
               ))}
+
               <motion.a
                 href="#contact"
                 onClick={handleNavClick}
                 onMouseEnter={playHover}
-                className="mt-8 px-8 py-4 bg-foreground text-background rounded-full font-medium text-lg"
+                className="mt-4 px-8 py-3 bg-foreground text-background rounded-full font-medium text-base sm:text-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 Let's Talk
               </motion.a>
+
+              {/* Legal Links */}
+              <div className="flex gap-6 mt-4">
+                {legalItems.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  >
+                    <Link
+                      to={item.href}
+                      onClick={handleNavClick}
+                      onMouseEnter={playHover}
+                      className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
